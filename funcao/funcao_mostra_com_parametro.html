@@ -1,0 +1,32 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function mostraTexto(texto) {
+
+        document.write(texto);
+        pulaLinha(); //uma função pode chamar outra função. ("GENIAL")
+    }
+
+    function pulaLinha() {
+
+        document.write("<br><br>");
+
+    }
+
+    let ano = 2016;
+
+    // document.write("Flávio tem " + (ano - 1977) + " anos");
+    mostraTexto("Flávio tem " + (ano - 1977) + " anos"); // função é chamada recebendo um valor de parâmetro.
+
+    // document.write("Joaquim tem " + (ano - 1996) + " anos");
+    mostraTexto("Joaquim tem " + (ano - 1996) + " anos");  
+
+    ano = 2017;
+    
+    // document.write("Barney tem " + (ano - 1976) + " anos");
+    mostraTexto("Barney tem " + (ano - 1976) + " anos");
+
+    mostraTexto(); // pois não passamos parâmetros;
+
+</script>

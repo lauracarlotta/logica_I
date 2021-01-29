@@ -1,0 +1,33 @@
+<meta charset="UTF-8">
+
+<script>
+
+    // função = sempre declarada no início
+    // o nome da função sempre deve ser um nome de verbo, pois a função sempre executa uma ação!
+
+    /* Vantagens da função:
+        1. Legibilidade do código,
+        2. Amálgama ("conjunto de instruções")
+        3. Reutilização */
+
+    function pulaLinha() {
+
+        alert("<em>Olha a função aí sendo chamada!!!</em>")
+        document.write("<br><br><br>")
+
+    }
+
+    let ano = 2016;
+
+    document.write("Flávio tem " + (ano - 1977) + " anos");
+    
+    pulaLinha() // precisa ser chamada! A função fica quietinha, guardada lá no mortozinho do JS. Quando ela é "chamada", executa o que ela foi delada pra fazer
+
+    document.write("Joaquim tem " + (ano - 1996) + " anos");
+
+    pulaLinha()
+
+    ano = 2017;
+    document.write("Barney tem " + (ano - 1976) + " anos");
+
+</script>

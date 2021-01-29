@@ -1,0 +1,35 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+        document.write("<br><br>");
+    }
+
+    function exibeTitulo(titulo) {
+        document.write("<h1>" + titulo + "</h1>");
+        pulaLinha()
+    }
+
+    function exibeTexto(texto) {
+        document.write("<em><strong>" + texto + "</strong></em>")
+    }
+
+    function quantasGeracoesPassaram(anoAtual, anoPortuguesesChegaramBrasil, mediaIdadeCasalTemFilhos) {
+        let quantasGeracoes = (anoAtual - anoPortuguesesChegaramBrasil)/ mediaIdadeCasalTemFilhos;
+        return quantasGeracoes.toFixed(2);
+    }
+
+    /* function quantasGeracoesPassaram() {
+        let quantasGeracoes = (anoAtual - anoPortuguesesChegaramBrasil)/ mediaIdadeCasalTemFilhos;
+        return quantasGeracoes.toFixed(2); // toFixed(x) = quantas casas decimais você quer depois da virgula.
+    } */
+
+    let mediaIdadeCasalTemFilhos = 28;
+    let anoPortuguesesChegaramBrasil = 1500;
+    let anoAtual = 2021;
+
+    exibeTitulo("CRIANÇAS na sua família... VOCÊ QUER??");
+    exibeTexto("Desde " + anoPortuguesesChegaramBrasil + " até o ano atual, " + anoAtual + ", já se passaram aproximadamente " + quantasGeracoesPassaram(2021,1500,28) + " gerações!")
+    
+</script>
