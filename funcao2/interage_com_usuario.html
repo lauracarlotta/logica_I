@@ -1,0 +1,50 @@
+<meta charset="UTF-8">
+
+<button id="botao">Clique aqui 👈</button>
+
+<script>
+
+    function pulaLinha(){
+
+        document.write("<br><hr><br>");
+    }
+
+    function exibeTitulo(titulo) {
+
+        document.write("<h1>" + titulo + "</h1>");
+        pulaLinha();
+    }
+
+    function exibeTexto(texto) {
+
+        document.write("<big>" + texto + "</big>");
+        pulaLinha();
+    }
+
+    function calculaImc(peso, altura) {
+
+        // return (peso / (altura * altura)).toFixed(2);
+        return Math.round(peso / (altura * altura));
+    }
+
+    function clicaNoBotao() {
+
+        alert("Obrigada por usar nosso pequeno programa!");
+    }
+
+    exibeTitulo("Vamos interagir com o usuário?");
+
+    let nome = prompt("Qual é o seu nome? ");
+    let pesoInformado = prompt("Olá " + nome + ", informe o seu peso: ");
+    let alturaInformada = prompt("Agora " + nome + ", informe por favor a sua altura: ");
+
+    exibeTexto(`${nome}, o seu IMC aproximado é ≃ ${calculaImc(pesoInformado, alturaInformada)}! <br> Ao terminar, clique no botão 👆!`);
+
+    let botao = document.getElementById("botao");
+
+    botao.onclick = clicaNoBotao;
+    
+</script>
+
+
+

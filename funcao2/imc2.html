@@ -1,0 +1,51 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() { 
+
+        document.write("<br><br>");
+    }
+
+    function exibeTitulo(titulo) {
+
+        document.write("<h2>" + titulo + "</h2>");
+        pulaLinha();
+    }
+
+    function exibeTexto(texto) {
+
+        document.write("<big>" + texto + "</big>");
+        pulaLinha();
+    }
+
+    function calculaImc(peso, altura) {
+
+        let imc = peso / (altura * altura);
+        let  imcArredondado = imc.toFixed(2);
+
+        exibeTexto(`O Índice de Massa Corporal do(a) ${nome} é de aproximadamente ≃ ${imcArredondado}!`);
+        
+        if (imcArredondado < 18.5) {
+            exibeTexto(`Oooopss... Você precisa dar uma engodadinha ${nome}, você está muito magro(a)...`);
+        }
+
+        if (imcArredondado >= 18.5 && imcArredondado <= 35) {
+            exibeTexto(`Shooow, ${nome}!! O seu IMC está na média!! <br> Você está saudável!!!`);
+        }
+
+        if (imcArredondado > 35) {
+            exibeTexto(`${nome.toUpperCase()}, você precisa se cuidar! O seu IMC está muito alto!!!!`);
+        }
+    }
+
+    exibeTitulo("Calculando o IMC: Será que estamos saudaveis?");
+
+    let nome = prompt("Hey, colega: Qual é o seu nome?");
+    let pesoUsuario = prompt(`${nome}, digite aqui o seu peso: `);
+    let alturaUsuario = prompt(`Agora ${nome}, digite a sua altura: `);
+
+    
+    calculaImc(pesoUsuario, alturaUsuario);
+    
+</script>

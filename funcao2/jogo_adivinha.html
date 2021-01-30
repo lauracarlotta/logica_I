@@ -1,0 +1,40 @@
+<meta charset="UTF-*">
+
+<script>
+
+    function pulaLinha() {
+
+        document.write(`<br><br>`);
+    }
+
+    function exibeTitulo(titulo) {
+
+        document.write(`<h1>${titulo}</h1>`);
+        pulaLinha();
+    }
+
+    function exibeTexto(texto) {
+        
+        document.write(`<big>${texto}</big>`);
+        pulaLinha();
+    }
+
+    exibeTitulo("Dúvido você adivinhar!!!!");
+
+    let meuNumero = Math.round(Math.random() * 10);
+    // Math.random() É a biblioteca que sorteia números, quando coloco * 10 é pra dizer até quantos numeros eu quero. (EX: se eu quisesse 1000 numeros eu colocaria * 100). Como os numeros sorteados dão um numero decimal, de 0.1684647689 a 9.7374354684, eu coloco o Math.random dentro de Math.round para arredondar o valor e conseguir sortear de 0 a 10.
+
+    console.log(meuNumero);
+
+    let chuteUsuario = parseInt(prompt(`Digite o seu chute de 0 a 10! BOA SORTE!`));
+
+    if (chuteUsuario == meuNumero) {
+
+        exibeTexto("Você acertou!!! <br> <strong>PARABEEEEEENS!!!!!</strong>");
+
+    } else {
+
+        exibeTexto(`Não foi dessa vez, camarada!! O número pensado foi ${meuNumero} <br> Tente novamente!!`);
+    }
+
+</script>

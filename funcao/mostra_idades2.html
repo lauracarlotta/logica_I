@@ -1,0 +1,29 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+
+        document.write("<br><hr><br>");
+    }
+
+    function exibeTitulo(titulo) {
+
+        document.write("<h1>" + titulo + "</h1>");
+        pulaLinha();
+    }
+
+    function exibeTexto(texto) {
+
+        document.write("<big>" + texto + "</big>");
+        pulaLinha();
+    }
+
+    let ano = 2021;
+
+    exibeTitulo("Nós nascemos em... Se liga ai!");
+    exibeTexto("Eu nasci em: " + (ano - 27) + "!");
+    exibeTexto("Well nasecu em: " + (ano - 25) + "!");
+    exibeTexto("A Dona Lucimar, minha queridíssima mãe, nasceu em: " + (ano - 50) + "!");
+
+</script>

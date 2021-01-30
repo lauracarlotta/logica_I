@@ -1,0 +1,46 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() { 
+
+        document.write("<br><br>");
+    }
+
+    function exibeTitulo(titulo) {
+
+        document.write("<h2>" + titulo + "</h2>");
+        pulaLinha();
+    }
+
+    function exibeTexto(texto) {
+
+        document.write("<big>" + texto + "</big>");
+        pulaLinha();
+    }
+
+    function calculaImc(peso, altura) {
+
+        let imc = peso / (altura * altura);
+        return imc; // o professor usou o exemplo pra o return + guardar numa variavel o valor de retorno da função, um moedor de carne, onde você coloca dentro um pedaço de carne no moedor (nos parametro) e quando sai (a carne moida) é o retorno da função.
+    }
+
+    exibeTitulo("Soma dos IMCs");
+    exibeTexto(`O IMC da Laura é ${calculaImc(64, 1.65)}!`);
+    exibeTexto(`O IMC do Well é ${calculaImc(76, 1.78)}!`)
+
+    let imcLaura = calculaImc(64, 1.65);
+    let imcWell = calculaImc(76, 1.78);
+
+    exibeTexto(`A soma dos 2 IMC's são de ${imcLaura + imcWell}!`);
+    
+    /* Ou o ex do professor:
+
+    let imcLaura = calculaImc(64, 1.65);
+    let imcWell = calculaImc(76, 1.78);
+
+    exibeTitulo("Soma dos IMCs");
+    exibeTexto(imcLaura + imcWell); */
+    
+
+</script>

@@ -1,0 +1,37 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() { // com o maouse em cima do parametro da a mensagem "void" que quer dizer vazia
+
+        document.write("<br><br>");
+    }
+
+    function exibeTitulo(titulo) {
+
+        document.write("<h2>" + titulo + "</h2>");
+        pulaLinha();
+    }
+
+    function exibeTexto(texto) {
+
+        document.write("<big>" + texto + "</big>");
+        pulaLinha();
+    }
+
+    let pesoLaura = 64;
+    let alturaLaura = 1.64;
+    let imcLaura = pesoLaura / (alturaLaura * alturaLaura);
+    let imcLauraArredondado = imcLaura.toFixed(2);
+
+    exibeTitulo("Calculando o IMC: Será que estamos saudaveis?");
+    exibeTexto("O meu Índice de Massa Corporal é de aproximadamente ≃ " + imcLauraArredondado + "!");
+
+    let pesoWell = 76;
+    let alturaWell = 1.78;
+    let imcWell = pesoWell / (alturaWell * alturaWell);
+    let imcWellArredondado = imcWell.toFixed(2);
+
+    exibeTexto("O Índice de Massa Corporal do Well é de aproximadamente ≃ " + imcWellArredondado + "!");
+    
+</script>

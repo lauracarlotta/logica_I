@@ -1,0 +1,35 @@
+<meta charset="UTF-8">
+<script>
+    function pulaLinha() {
+        document.write("<br>");
+    }
+
+    function mostra(frase) {
+        document.write(frase);
+        pulaLinha();
+    }
+
+    function calculaImc(altura, peso) {
+
+        var imc = peso / (altura * altura);
+        return imc;
+
+        // ou somente 
+        // return peso / (altura * altura);
+    }
+
+    // o retorno de uma função é sempre um parâmetro!
+
+    var imcCalculado = calculaImc(1.77, 75);
+    mostra("O meu IMC é : " + imcCalculado);
+
+    /* Porque eu não coloquei a função mostra na tela dentro da calcula IMC? Porque e se no futuro eu quiser mandar a msg como um sms? 
+    Neste caso deixamos para a "variável que chama a função " o que ela é vai decidir fazer com ela! */
+
+    /* 
+    Na apostila: 
+    
+    Entendemos o calculaImc() como um moedor de carne, em que entram as informações de peso e altura, e sai o resultado da função. Entram dois parâmetros, mas é emitido apenas um resultado. */
+
+</script>
+

@@ -1,0 +1,61 @@
+<meta charset="UTF-8">
+
+<button id="botao">Clique aqui 👈</button>
+
+<script>
+
+    function pulaLinha(){
+
+        document.write("<hr><br><br>");
+    }
+
+    function exibeTitulo(titulo) {
+
+        document.write("<h1>" + titulo + "</h1>");
+        pulaLinha();
+    }
+
+    function exibeTexto(texto) {
+
+        document.write("<big>" + texto + "</big>");
+        pulaLinha();
+    }
+
+    function clicaNoBotao() {
+
+        alert("Obrigada por usar nosso pequeno programa!");
+    }
+
+    let nome = prompt("Opa, tudo tranquilo? Hein, qual é o seu nome? ");
+    let time = prompt("Pra que time você torce? ");
+
+    exibeTitulo(`Me conta aqui: E como é que tá o ${time} ???`);
+
+    let vitoriasAtuais = parseInt(prompt("Digite a quantidade de vitórias desse ano: "));
+    let empatesAtuais = parseInt(prompt("Digite aqui o número de empates de ano: "));
+    let pontuacao = vitoriasAtuais * 3 + empatesAtuais;
+    let totalPontosAnoPassado = parseInt(prompt(`Digite aqui o total de pontos do ${time} do ano passado: `));
+
+    // por padrão, a função prompt recebe uma string, então nesse caso, como queremos fazer cálculos com o que eremos receber do usuario, obrigatóriamente precisamos converter a string para number utilizando o parseInt  
+
+    exibeTexto(`${nome}, a pontuação do ${time} pra esse campeonato é de ${pontuacao} pontos! <br>`);
+    
+    if (pontuacao > totalPontosAnoPassado) {
+        exibeTexto(`Aeeee, o ${time} está melhor do que no ano passado!`);
+    }
+
+    if (pontuacao < totalPontosAnoPassado) {
+        exibeTexto(`Xiiiiii, o ${time} está pior do que no ano passado!`);
+    }
+
+    if (pontuacao == totalPontosAnoPassado) {
+        exibeTexto(`Tá bom, vai... o ${time} está igual ao ano passado!`);
+    }
+
+    exibeTexto(`Bora lá, timeeee!!! <br> Ao terminar, clique no botão 👆!`);
+
+    let botao = document.getElementById("botao");
+
+    botao.onclick = clicaNoBotao;
+    
+</script>
