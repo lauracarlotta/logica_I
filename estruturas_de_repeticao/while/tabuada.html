@@ -1,0 +1,40 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+
+        document.write(`<br><br>`);
+
+    }
+
+    function exibeTitilo(titulo) {
+
+        document.write(`<h1>${titulo}</h1>`);
+        pulaLinha();
+
+    }
+
+    function exibeTexto(texto) {
+
+        document.write(`<p>${texto}</p>`);
+    }
+
+
+    exibeTitilo(`Tabuada:`);
+
+    let contador = 1;
+
+    let num = parseInt(prompt(`Qual tabuada você quer ver? `));
+
+    let tabuada = num * contador;
+
+    while (contador <= 10) {
+
+        exibeTexto(`${num} x ${contador} = ${tabuada}`);
+        contador++
+    }
+
+    exibeTexto(`FIM`);
+
+</script>

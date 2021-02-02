@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <title>Amo futebol</title>
+</head>
+
+<body>
+    <style>
+
+        body {
+            background-color: blue;
+        }
+    
+        h2 {
+            color: yellow;
+            position: absolute;
+            top: 100px;
+            left: 20px;
+        }
+    
+        p {
+            color: white;
+            font-size: 20px;
+            text-indent: 80px;
+        }
+        .imagem {
+            margin: 0 auto;
+            width: 300px;
+            height: 200px;
+        }
+
+        img {
+            opacity: 0.8;
+        }
+    
+    </style>
+    
+    <div class="imagem">
+        <img class="img" src="bandeira_brasil.png" alt="Bandera do Brasil">
+    </div>
+    
+    <script>
+    
+        function pulaLinha() {
+    
+            document.write(`<br><br>`);
+    
+        }
+    
+        function exibeTitulo(titulo) {
+    
+            document.write(`<h2>${titulo}</h2>`);
+    
+        }
+    
+        function exibeTexto(texto) {
+    
+            document.write(`<p>${texto}</p>`);
+    
+        }
+    
+        exibeTitulo(`Desde de 1930 nós tivemos copas <br> nos seguintes anos: `);
+
+        let dataLimite = parseInt(prompt(`Até que ano você quer ver os anos que tivemos ou teremos copa no futuro? `));
+
+        let anoCopa = 1930;
+
+        let anoAtual = 2021;
+
+        while(anoCopa <= dataLimite) {
+
+            if (anoCopa <= anoAtual) {
+
+                exibeTexto(`Teve copa em ${anoCopa}`);
+                anoCopa = anoCopa + 4;
+
+            } else {
+
+                exibeTexto(`Teremos copa em ${anoCopa}`);
+                anoCopa = anoCopa + 4;
+
+            }
+        }
+
+        alert("Fim");
+    
+    </script>
+    
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números de 30 a 40</title>
+</head>
+
+<body>
+    
+    <script>
+        
+        function pulaLinha() {
+
+            document.write(`<br><br>`);
+
+        };
+
+        function exibeTitulo(titulo) {
+
+            document.write(`<h2>${titulo}</h2>`);
+
+        }
+
+        function exibeTexto(texto) {
+
+            document.write(`<p>${texto}</p>`);
+            pulaLinha();
+
+        }
+
+        exibeTitulo(`Números de 30 a 40, execeto 33 e 37`);
+
+        let contador = 30;
+
+        while (contador <= 40) {
+
+            if (contador == 33 || contador == 37) {
+                
+                contador++
+
+            } else {
+
+                exibeTexto(`Número ${contador}`);
+                contador ++
+            }
+        }
+
+        exibeTexto(`FIM`);
+
+    </script>
+
+</body>
+
+</html>

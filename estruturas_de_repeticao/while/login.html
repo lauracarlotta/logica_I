@@ -1,0 +1,71 @@
+<!-- <!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entre com o seu login</title>
+</head>
+
+<body>
+    
+    <script>
+
+        
+
+        let loginCadastrado = "alura";
+        let senhaCadastrada = "alura321";
+        
+        let loginInformado = prompt("Informe seu login");
+        let senhaInformada = prompt("Informe sua senha");
+
+        let tentativas = 1;
+
+      
+        if( loginCadastrado == loginInformado && senhaCadastrada == senhaInformada ) {
+
+            alert("Bem-vindo ao sistema " + loginInformado);
+            
+        } else {
+            alert("Login inválido. Tente novamente");
+
+            loginInformado = prompt("Informe seu login");
+            senhaInformada = prompt("Informe sua senha");
+
+            while (loginCadastrado != loginInformado && senhaCadastrada != senhaInformada && tentativas <= 2){
+                let loginInformado = prompt("Informe seu login");
+                let senhaInformada = prompt("Informe sua senha");
+                tentativas++
+            }
+        } -->
+        
+
+        /* if( loginCadastrado == loginInformado && senhaCadastrada == senhaInformada ) {
+
+            alert("Bem-vindo ao sistema " + loginInformado);
+
+        } else {
+
+            while (tentativas <= 2) {
+
+                alert("Login inválido. Tente novamente");
+                loginSenha();
+
+                if( loginCadastrado == loginInformado && senhaCadastrada == senhaInformada ) {
+                    
+                    alert("Bem-vindo ao sistema " + loginInformado);
+                    
+
+                } else {
+
+                    tentativas ++
+                }
+                
+            }
+            
+        } */
+    </script>
+
+</body>
+
+</html>

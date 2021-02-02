@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
+    <title>Números Pares</title>
+</head>
+
+<body>
+
+    <script>
+        
+        function pulaLinha() {
+
+            document.write(`<br><br>`);
+        }
+
+        function exibeTitulo(titulo) {
+
+            document.write(`<h1>${titulo}</h1>`);
+            pulaLinha();
+
+        }
+
+        function exibeTexto(texto) {
+
+            document.write(texto);
+            pulaLinha()
+
+        }
+
+        exibeTitulo(`Só os pares, hein!`);
+
+        /* let fim = parseInt(prompt(`Até que número você quer a contagem? `)); */
+
+        let contador = 0;
+
+        while (contador <= 100) {
+
+            exibeTexto(`Número <em>${contador}</em>`);
+            contador += 2;
+
+        }
+
+        exibeTexto(`<strong><em>FIM</em></strong>.`);
+
+        /* while (contador <= 10) {
+
+            if (contador % 2 == 0) {
+
+                exibeTexto("Número " + contador);
+                contador ++
+                console.log(contador);
+        
+            }
+        } */
+    </script>
+
+</body>
+
+</html>
