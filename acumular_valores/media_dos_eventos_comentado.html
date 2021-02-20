@@ -1,0 +1,70 @@
+<meta charset="UTF-8">
+<script>
+
+    function pulaLinha() {
+
+        document.write("<br>");
+    }
+
+    function mostra(frase) {
+
+        document.write(frase);
+        pulaLinha();
+    }
+
+    let totalDeEventos = parseInt(prompt("Informe o total de eventos"));
+
+    let contador = 1;
+
+    let totalGastoComEventos = 0;
+
+    while(contador <= totalDeEventos) {
+        
+        let gasto = prompt(`Informe total gasto com ${contador}º evento: R$`);
+        gasto = gasto.replace(",","."); // string => com replace consigo mudar, mudo primeiro pois o input está retornando uma string (padrão);
+        gasto = parseFloat(gasto); // aqui, para poder fazer um calculo preciso necessariamente mudar a String para Number;
+        totalGastoComEventos = totalGastoComEventos + gasto;
+        console.log(totalGastoComEventos);
+        contador++;
+        console.log(contador);
+    }
+
+    let media = totalGastoComEventos / totalDeEventos;
+    console.log(media);
+
+    media = String(media.toFixed(2));
+
+    // media = String(media);
+
+    // media = media.replace(".",","); 
+
+    mostra(`A média de gastos dos ${totalDeEventos} eventos foi R$ ${media.replace(".",",")}.`);
+
+</script>
+
+<!-- 
+    ... (* ERRO DEPOIS DO WHILE, ATÉ ALI ESTAVA FUNCIONANDO. *)
+
+    let media = totalGastoComEventos / totalDeEventos;
+    console.log(media);
+    
+    media = media.replace(".",","); // REPLACE => PADRÃO = String
+
+    mostra(`A média de gastos é ${media.toFixed(2)}`); // .toFixed => PADRÃO = Number
+    
+    ---------------------------------------------------------------------------------
+
+    A HISTÓRIA:
+
+    O PROGRAMA ESTAVA RECONHECENDO OS VALORES, O INCLUIA NA VARIÁVEL, FAZIA O CALCULO SÓ QUE NÃO PRINTAVA NA TEVA O RESULTADO. PORÉM CONFORME O CÓDIGO ACIMA, QUE ERA COMO ESTAVA ANTES DE EU CORRIGI-LO, O CONSOLE MOSTRAVA UM ERRO NA PARTE " media = media.replace(".",","); ", ISSO PORQUE A FUNÇÃO .replace POR PADRÃO RECEBE UM STRING, JÁ O .toFixed RECEBE UM NUMBER, OU SEJA O ERRO ERA A CONVERSÃO DAS VARIÁVEIS POIS CADA UMA DEVE SER APLICADA COM O QUE RECEBE RESPECTIVAMENTE POR PADRÃO.
+
+        PEDI AO WELL QUE ME AJUDASSE, ENTÃO ELE ME ORIENTOU A FAZER O SEGUINTE:
+
+            1. LER O ERRO QUE DAVA NO CONSOLE (ali eu já conseguiria ter visto que o erro estava no .replace; );
+
+            2. JÁ QUE O ERRO ESTAVA NO .replace, EU DEVERIA VER NA DOCUMENTAÇÃO INFOS SOBRE A MESMA E DE CARA NO MDN MOSTRA QUE O .replace RECEBE POR PADRÃO UMA STRING QUANDO EU ESTAVA ATRIBUINDO A ELE UM NUMBER. 
+
+            ** PORÉM, O WELL IDENTIFICOU QUE EU TERIA UM SEGUNDO PROBLEMA COM O .toFixed(), ELE QUE POR PADRÃO RECEBE UM NUMBER, OU SEJA, CONFORME O CÓDIGO ACIMA EU TERIA QUE REORGANIZAR A VARIÁVEL PARA NÃO PRECISAR MUDAR A TIPAGEM A TODO MOMENTO E SIM APLICAR AS FUNÇÕES DE FORMA ORGANIZADA PARA AQUILO QUE EU PRECISA/QUERIA.
+
+            *** MOSTREI PRA ELE O MEU CÓDIFO RESOLVIDO, DEPOIS DISSO, (ESTAVA RODANDO TUDO CERTO), PORÉM ELE DISSE QUE O PRÓXIMO PASSO SERIA SIMPLIFICAR O CÓDIGO, COMO PODE SER VISTO ACIMA COM AS LINHAS COMENTADAS! -->
+    

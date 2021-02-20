@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Login</title>
+</head>
+
+<body>
+
+    <p>Para cadastrar senha,</p>
+    <button class="buttonCadastro">Clique aqui</button>
+
+    <p>Para acessar o sistema, </p>
+    <button class="buttonLogin">Clique aqui</button>
+
+    <script>
+
+        let botaoCadastro = document.querySelector(".buttonCadastro");
+        let loginCadastrado = "";
+        let senhaCadastrada = "";
+
+
+        function cadastrarLogin() {
+
+            loginCadastrado = prompt("Cadastre seu login");
+            senhaCadastrada = prompt("Cadastre sua senha");
+            alert(`Cadastro efetuado com Sucesso!`);
+
+        }
+
+        let botaoLogin = document.querySelector(".buttonLogin");
+
+        function logar() {
+
+            let loginUsuario = loginCadastrado; 
+            let senhaUsuario = senhaCadastrada;
+
+            let tentativaAtual = 1; // contador
+            let totalTentativas = 3;
+            
+            while (tentativaAtual <= totalTentativas) {
+
+                let loginInformado = prompt("Digite o login: ");
+                let senhaInformada = prompt("Digite a senha: ");
+
+                if (loginInformado == loginUsuario && senhaInformada == senhaUsuario) {
+
+                    alert(`Olá ${loginUsuario}, Seja Bem-vindo(a)!`);
+                    tentativaAtual = totalTentativas;
+                    
+                } else {
+
+                    alert(`Login ou senha inválidos.Tente novamente!`);
+
+                    if (tentativaAtual == totalTentativas) {
+
+                        alert(`Você excedeu o número máximo de tentativas!`);
+                        alert(`Sistema bloqueado!`);
+
+                    }
+                    
+                }
+
+                tentativaAtual++;
+                
+            }   
+
+        }
+
+        botaoCadastro.onclick = cadastrarLogin;
+
+        botaoLogin.onclick = logar;
+
+    </script> 
+
+
+</body>
+
+</html>

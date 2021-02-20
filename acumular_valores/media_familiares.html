@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Media Familiares</title>
+</head>
+
+<body>
+ 
+    <button class="button-calcule">Calcula média</button>
+
+    <script>
+
+        function pulaLinha() {
+
+            document.write(`<br><br>`);
+
+        }
+
+        function exibeTitulo(titulo) {
+
+            document.write(`<h1>${titulo}</h1>`);
+            pulaLinha();
+
+        }
+
+        function exibeTexto(texto) {
+
+            document.write(`<p 
+            style="background-color: #FF0;
+                    font-size: 30px;
+                    font-weight: bolder;
+                    margin: 50px 0;
+                    text-align: center;">
+                    ${texto}</p>`);
+            pulaLinha();
+
+        }
+
+        function calculaMediaIdadeFamiliares() {
+
+            let quantidadeFamiliares = parseInt(prompt(`Você que saber a media de idade de quantos familiares?`));
+
+            let contador = 1;
+            let totalFamiliares = quantidadeFamiliares;
+            let totalIdades = 0;
+
+            while (contador <= totalFamiliares) {
+
+                let idades = parseInt(prompt(`Digite a idade do(a) ${contador}º familiar: `));
+                totalIdades += idades;
+                // totalIdades = totalIdades + idades;
+                contador ++;
+            }
+
+            let mediaIdades = totalIdades / totalFamiliares;
+
+            exibeTexto(`A média de idade dos meu familiares é de aproximadamente ${mediaIdades.toFixed(2)} anos!`);
+        }
+
+        let botaoCalculaMediaIdadeFamiliares = document.querySelector(`.button-calcule`);
+
+        exibeTitulo(`Qual é a media de idade da sua Família, você sabe? <br> ☝️ Para saber, clique no botão!`);
+
+        botaoCalculaMediaIdadeFamiliares.onclick = calculaMediaIdadeFamiliares;
+
+    </script>
+
+</body>
+
+</html>

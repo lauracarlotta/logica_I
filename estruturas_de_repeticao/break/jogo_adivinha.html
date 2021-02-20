@@ -1,0 +1,88 @@
+<meta charset="UTF-8">
+
+<style>
+
+    .color {
+        color: red;
+    }
+
+    .color-span {
+        color: rgb(6, 6, 65);
+        font-size: xx-large;
+        font-style: italic;
+        font-weight: bolder;
+    }
+
+</style>
+
+<script>
+
+    function pulaLinha() {
+        
+        document.write(`<br><br>`);
+    }
+
+    function exibeTitulo(titulo) {
+
+        document.write(`<h1>${titulo}</h1>`);
+        pulaLinha();
+    }
+
+    function exibeTexto(texto) {
+
+        document.write(`<em><big>${texto}</big></em>`);
+        pulaLinha();
+    }
+
+    function tenteNovamente() {
+
+        document.write(`<span class="color-span">Tente novamente!!</span>`);
+    }
+
+    function sorteia(n) {
+
+        return Math.round(Math.random() * n);
+         
+    }
+
+    exibeTitulo(`Bora jogar?`);
+
+    /* let numeroSorteado = Math.round(Math.random() * 100);
+    console.log(numeroSorteado); */
+
+    let ateQueNumeroSortear = parseInt(prompt(`Você quer que o sorteio seja de 0 a que número? `));
+    alert(`LEMBRE-SE: Você tem 3 tentaivas!`);
+
+    let numeroSorteado = sorteia(ateQueNumeroSortear);
+    console.log(numeroSorteado);
+
+    let tentativaAtual = 1;
+    let totalTentativas = 3;
+    let totalTentativasContador = 3;
+
+    while (tentativaAtual <= totalTentativas) {
+
+        let chuteUsuario = parseInt(prompt(`Chuta um número: `));
+        
+        if (chuteUsuario == numeroSorteado) {
+
+            exibeTexto(`Wow! Você é bom nisso!<br> <strong class="color">Parabéns</strong>, você acertou!!!`);
+            break;
+
+        } else {
+
+            alert(`Você errou!`);
+            alert(`Você tem mais ${--totalTentativasContador} tentativa(s)!`);
+
+            if (tentativaAtual == totalTentativas) {
+
+                exibeTexto(`Você excedeu o total de tentativas!`);
+                exibeTexto(`O número sorteado foi ${numeroSorteado}.`);
+                
+            } 
+
+        }
+
+        tentativaAtual++;
+    }
+</script>

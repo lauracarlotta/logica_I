@@ -1,0 +1,37 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+
+        document.write(`<br><br>`);
+
+    }
+
+    function exibeTitulo(titulo){
+
+        document.write(`<h1> ${titulo} </h1>`);
+        pulaLinha();
+
+    }
+
+    function exibeTexto(texto) {
+
+        document.write(`<big>${texto}</big>`);
+
+    }
+
+    exibeTitulo(`ESTRELAS`);
+
+    for(let linha = 1; linha <= 3; linha++){
+
+        for(let coluna = 1; coluna <= 10; coluna++) {
+
+            exibeTexto(`*`);
+            
+        }
+
+        pulaLinha();
+    }
+
+</script>
