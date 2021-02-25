@@ -1,0 +1,75 @@
+<!-- Mais uns adendos -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Jogo do Adivinha 2.0</title>
+    <style>
+
+        .container{
+            margin: 50px;
+        }
+
+        input{
+            margin: 0 10px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Jogo do Adivinha 2.0</h1>
+        
+        <div class="tentativa">
+
+            Qual número? <input class="secret-number" type="text" placeholder="Digite um chute de 0 a 100" maxlength="500px">
+            
+            <button class="compare">Compare com o meu segredo</button>
+
+        </div>
+
+    </div>
+
+    
+    <script>
+
+        let secretNumber = Math.round(Math.random() * 100);
+        console.log(secretNumber);
+
+        let inputSecretNumber = document.querySelector("input.secret-number");
+
+        inputSecretNumber.focus();
+        
+        function verifica() {
+
+            if(inputSecretNumber.value == secretNumber) {
+
+                alert("PARABÉNS!!!!! Você acertou!");
+
+            } else {
+
+                alert("Xiiiiii... Tá pé frio... Você errou!!!");
+
+            }
+
+            inputSecretNumber.value = ""; // pra limpar o input e econseguir fazer uma nova tentativa.
+            inputSecretNumber.focus();
+        } // quero associar essa funcção ao botão do compare.
+
+        let compareButton = document.querySelector("button.compare");
+
+        compareButton.onclick = verifica; // verifica é colocando dentro do onclick do meu botão, assim ele estará preparado para quando eu clicar no botão, executar o verifica.
+
+    </script>
+
+</body>
+
+</html>

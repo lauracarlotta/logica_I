@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tchau, tchau, my friend!</title>
+        <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+
+        <style>
+            .container {
+                margin: 50px;
+            }
+        </style>
+
+    </head>
+
+    <body>
+        
+        <div class="container">
+
+            <h1>Clique no botão para verificar o que ele diz!!!</h1>
+            <button class="clickHere">Clique aqui</button>
+
+        </div>
+
+        <script>
+
+            function clicar() {
+
+                alert("tchau!");
+            }
+
+            let buttonClickHere = document.querySelector("button.clickHere");
+
+            buttonClickHere.onclick = clicar;
+            
+        </script>
+        
+    </body>
+
+</html>

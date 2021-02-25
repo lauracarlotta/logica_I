@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alert o Nome Digitado</title>
+</head>
+
+<body>
+
+    <h1>Alert o Nome Digitado</h1>
+
+    Nome: <input class="user-name" type="text" placeholder="Digite aqui o seu nome">
+    <button class="send">Enviar</button>
+
+    <script>
+
+        let inputUserName = document.querySelector("input.user-name");
+
+        function nome() {
+
+            document.write(`Bem-vindo(a), ${inputUserName.value}!`);
+
+        }
+
+        let sendButton = document.querySelector("button.send");
+
+        sendButton.onclick = nome;
+
+        /* 
+        
+        let input = ;
+
+        function nome() {
+
+
+
+        }
+
+        let button = ;
+
+        button.onclick = nome; 
+        
+        ********Estrutura basica ********* 
+        
+        */
+
+    </script>
+
+</body>
+
+</html>
