@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="../favicon.ico" type="image/icon-x">
+        <style>
+
+            h1 {
+                text-align: center;
+            }
+
+        </style>
+
+        <title>Especificidades de um array</title>
+
+    </head>
+
+    <body>
+
+        <h1>Especificidades de um array</h1>
+        
+        <script>
+
+            // Declarando um array certo seria apenas com colchetes [];
+            let nome = "Regina"; // string
+            let idade = 22; // number
+            let temCarteira = true; //booleano
+
+            let valores = ["Regina", 22, true];
+            console.log(valores);
+            
+            
+
+            // Os indíces começam no 0, ou seja, um array com 4 valores vai de 0 a 3.
+            let pizzas = ["Portuguesa", "Mussarela", "Atum", "Margherita" ];
+            console.log(pizzas[2]); // "Atum"
+
+
+
+            //Para saber o tamanho de um array podemos fazer o seguinte:
+            let alunos = ['Luana', 'Antonio', 'Wellington', 'Diego', 'Lucimar'];
+            console.log(alunos.length);
+
+
+
+            // podemos adicionar um item na lista (array com o seguinte comando:)
+            let familia = ['Lucimar', 'Rubens pai', 'Laura', 'Rubens filho'];
+            console.log(familia);
+
+            familia.push('Wellington');
+            cosole.log(familia);
+
+        </script>
+
+    </body>
+
+</html>

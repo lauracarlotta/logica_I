@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equive="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, inicial-scale=1.0">
+        <link rel="shortcut icon" href="../favicon.ico" type="image/icon-x">
+        
+        <style>
+
+            .container{
+                margin: 50px;
+            }
+    
+            input{
+                margin: 0 10px;
+            }
+    
+        </style>
+
+        <title>Jogo do Adivinha com Array</title>
+    </head>
+
+    <body>
+
+        <div class="container">
+
+            <h1>Jogo do Adivinha 2.0</h1>
+            
+            <div class="tentativa">
+    
+                Qual número? <input class="secret-number" type="text" placeholder="Digite um chute de 0 a 100" maxlength="500px">
+                
+                <button class="compare">Compare com o meu segredo</button>
+    
+            </div>
+    
+        </div>
+        
+        <script>
+            
+            /* let secretNumber = Math.round(Math.random() * 100); */
+
+            function sorteia() {
+
+                return Math.round(Math.random() * 10);                
+            } // 1 - ao invés de sortear um numero com o random, ou inseri-lo manualmente através do .push() criamos a função para chamá-la todas as vezes que formos usá-la. 
+
+            //***** sempre devemos pensar que se vamos ter que usar uma coisa muitas vezes, porque não criar uma função?
+
+            function sorteiaNumeros(quantidade) {
+
+                let segredos = [];
+                // 3 - declaramos o array "segredos" vazia;
+
+                let contador = 1;
+                // 4 - um contador para podermos fazer um laço;
+
+                while (contador <= quantidade) {
+                // 5 - então, "enquanto" o contador for "maior ou igual" a "quantidade" (que será declarada na chamada da função) acontecerá o loop;
+
+                    let numeroAleatorio = sorteia();
+                    // 6 - (variável) numeroAleatorio passa a receber a função sorteia;
+
+                    let achou = false;
+                    // 7 - (variável) "achou" recebe "false" porque ela só se torna verdadeira, caso o numero tenha sido sorteado e inserido na lista (array);
+
+                    if (numeroAleatorio != 0) {
+                    // 15 - Como não queremos que o número sorteado seja zero, colocamos toda a estrutura do "for" dentro de um "if", onde "Se" numeroAleatorio for diferente de 0, aí sim eu inicio o loop do for.
+                    
+                        for (let posicao = 0; posicao < segredos.length; posicao++) {
+                        // 8 - Para sabermos se o valor está na lista precisamos percorrer a lista toda; ENTÃO, "para" (declaramos a variável) posicao (para ser o nosso contador do índice da lista) iniciada em zero (pois o índice começa em zero); posicao menor que segredos.length (o tamanho do nosso array. ** Não é menor ou igual [<=] porque por conta do índice começar em zero, maior ou igual vazaria o tamanho do nosso array, imprimindo ao invés de 5 números que é o nosso caso, 6 números.); posicao incrementa;
+
+                            if (segredos[posicao] == numeroAleatorio) {
+                            // 9 - "Se" algum item do índice do array "segredos" for igual ao número aleatório;
+
+                                achou = true;
+                                // 10 - Achou passa a ser true;
+                                break;
+                                // 11 - pára e sai do for (loop);
+
+                            }
+
+                        }
+
+                        if (achou == false) {
+                        // 12 - "Se" achou for igual a false;
+
+                            segredos.push(numeroAleatorio);
+                            // 13 - ai pode acrescentar pelo .push() a variável segredos o numeroAleatorio;
+                            contador++;
+                            // 14 - E asi sim, incrementa o contador, se não o contador pode perder um só verificando e o numero ja estar na lista;
+
+                        }
+                        
+                    }
+                }
+
+                return segredos;
+            } // 2 - Depois criamos a função para adicionarmos o numero na nossa lista. Pra isso criamos a função que quando a chamamos damos a ela o parâmetro de quantos valores serão sorteados. Porém, percebemos que o random acabava sorteando as vezes os mesmos numeros para a lista. O que resolvemos assim: 
+
+            let secrets = sorteiaNumeros(5);
+            console.log(secrets);
+
+            let inputSecretNumber = document.querySelector("input.secret-number");
+
+            inputSecretNumber.focus();
+            
+            function verifica() {
+
+                let achou = false;
+
+                for(let position = 0; position < secrets.length; position++) {
+
+                    if(inputSecretNumber.value == secrets[position]) {
+
+                        alert("PARABÉNS!!!!! Você acertou!");
+                        achou = true;
+                        break;
+
+                    }
+
+                } 
+
+                if (achou == false) {
+
+                    alert("Xiiiiii... Tá pé frio... Você errou!!!");
+
+                }
+
+                inputSecretNumber.value = "";
+                inputSecretNumber.focus();
+            }
+
+            let compareButton = document.querySelector("button.compare");
+
+            compareButton.onclick = verifica;
+
+        </script>
+
+    </body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equive="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, inicial-scale=1.0">
+        <link rel="shortcut icon" href="../favicon.ico" type="image/icon-x">
+        
+        <style>
+
+            .container{
+                margin: 50px;
+            }
+    
+            input{
+                margin: 0 10px;
+            }
+    
+        </style>
+
+        <title>Jogo do Adivinha com Array</title>
+    </head>
+
+    <body>
+
+        <div class="container">
+
+            <h1>Jogo do Adivinha 2.0</h1>
+            
+            <div class="tentativa">
+    
+                Qual número? <input class="secret-number" type="text" placeholder="Digite um chute de 0 a 100" maxlength="500px">
+                
+                <button class="compare">Compare com o meu segredo</button>
+    
+            </div>
+    
+        </div>
+        
+        <script>
+            
+            /* let secretNumber = Math.round(Math.random() * 100); */
+
+            let secrets = [ 10, 5, 6, 7, 2, 12 ]; // Guardar lista de valores
+
+            console.log(secrets);
+
+            let inputSecretNumber = document.querySelector("input.secret-number");
+
+            inputSecretNumber.focus();
+            
+            function verifica() {
+
+                let achou = false;
+
+                for(let position = 0; position < secrets.length; position++) {
+
+                    if(inputSecretNumber.value == secrets[position]) {
+
+                        alert("PARABÉNS!!!!! Você acertou!");
+                        achou = true;
+                        break;
+
+                    }
+
+                } 
+
+                if (achou == false) {
+
+                    alert("Xiiiiii... Tá pé frio... Você errou!!!");
+
+                }
+
+                inputSecretNumber.value = "";
+                inputSecretNumber.focus();
+            }
+
+            let compareButton = document.querySelector("button.compare");
+
+            compareButton.onclick = verifica;
+
+        </script>
+
+    </body>
+
+</html>

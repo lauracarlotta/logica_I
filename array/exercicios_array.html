@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="device=width-device, initial-scale=1.0">
+        <link rel="" href="" type="">
+        <style>
+
+            h1 {
+                text-align: center;
+            }
+
+        </style>
+
+        <title>Exercícios</title>
+
+    </head>
+
+    <body>
+        
+        <h1>Exercícios com Array</h1>
+        <script>
+
+            // Exercício de leitura: Não executa o for, exibe direto "FIM". O que está errado?
+            let parcelas = [10.40, 40.00, 100.18, 200];
+            for(let i = 0; i < parcelas.length; i = i + 1) { // length estava escrito errado.
+                document.write(parcelas[i]);
+            }
+            document.write("FIM");
+
+
+
+
+            //Exercício: exibe o array todo, exceto "Saladino"
+            let jogadores = ["Saladino", "Cage", "Xur", "Rayson"];
+
+            for (let i = 0; i < jogadore.length; i++) {
+            //for( let i = 1; i < jogadores.length; i++) { o let i deve começar em 0 pois é 1º nº do array
+
+                alert(jogadores[i]);
+            }
+
+
+
+            
+
+            // Porque ao percorrer o array foi exibido um último valor como "undefined"?
+            let letras = ['A', 'B', 'C', 'D'];
+
+            for (let i = 0; i < letras.length; i++) {
+            //for( let i = 0; i <= letras.length; i++ ) { porque com o sinal de = ele ira vazar o tamanho do array, por isso colocamos somente o sinal de <. (Ou seja, como não tem o 5º valor, ele será undefined.)
+                alert(letras[i]);
+            }
+
+
+
+
+
+
+
+        </script>
+
+    </body>
+
+</html>
